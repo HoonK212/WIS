@@ -1,5 +1,6 @@
 <template>
   <div>
+    <input type="checkbox" id="myCheck"><label for="myCheck"></label>
     <div class="sidebar">
       <a v-for="key in menu" :key="key" class="button black">
         {{key}} 
@@ -7,13 +8,12 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'App',
   data(){
     return {
-      menu : ['Home', 'Security techniques', 'Attack technique', 'Use']
+      menu : ['HOME', 'Security techniques', 'Attack technique', 'Use']
     }    
   }
 }
@@ -22,14 +22,34 @@ export default {
 <style>
     body {
       font-family: "Montserrat", sans-serif;
-      }
+      background-color:#000;
+    }
+
+    input[type=checkbox] { display:none; }
+
+    input[type=checkbox] + label { 
+      display: block;
+      padding: 20px;
+      width: 40px;
+      height: 40px;
+      background-image : url("img/menu_close.png");
+      background-repeat: no-repeat;
+       background-size: contain;
+    }
+
+    input[type='checkbox']:checked+label {
+      background-image : url("img/menu_open.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
 
     .sidebar {
       height:100%; 
       width:25%; 
-      background-color:#fff; 
+      background-color : #000; 
       position:fixed!important; 
       z-index:1;
+      visibility: show;
     }
 
     .button {
