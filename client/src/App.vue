@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="checkbox" id="myCheck"><label for="myCheck"></label>
+    <input type="checkbox" id="Check"><label for="Check"></label>
     <div class="sidebar">
       <a v-for="key in menu" :key="key" class="button black">
         {{key}} 
@@ -13,7 +13,7 @@ export default {
   name: 'App',
   data(){
     return {
-      menu : ['HOME', 'Security techniques', 'Attack technique', 'Use']
+      menu : ['Login', 'HOME', 'Security techniques', 'Attack technique', 'Use']
     }    
   }
 }
